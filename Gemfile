@@ -19,8 +19,8 @@ gem 'execjs'
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
-gem 'sprockets_better_errors'
-gem 'rails_12factor', group: :production
+#gem 'sprockets_better_errors'
+#gem 'rails_12factor', group: :production
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 

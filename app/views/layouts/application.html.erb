@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Ruby Blog</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= render "partials/header" %>
+  <div id="page">
+   <div id="page-bgtop">
+    <div id="page-bgbtm">
+     <div id="content">
+     	<div class="flash-message">
+     		<% flash.each do |key, value| %>
+			<p><%= value %></p>
+			<% end %>
+		</div>  	
+	    <%= yield %> <!-- main view -->
+	    <div style="clear: both;">&nsbp;</div>
+     </div>
+     <!-- end #content -->
   
-  <%= csrf_meta_tags %>
-</head>
-<body>
+     <%= render "partials/sidebar" %>
+     <div style="clear: both;">&nsbp;</div>
 
-<div>
-	<ul class="main-nav">
-		<li><%= link_to "Home", root_path %></li>
-		<li><%= link_to "About", about_path %></li>
-		<li><%= link_to "Blog", posts_path %></li>
-		<li><%= link_to "Contact", contact_path %></li>
-		<li><%= link_to "Resources", resources_path %></li>
-	</ul>
-</div>
-
-<% flash.each do |key, value| %>
-<p><%= value %></p>
-<% end %>
-
-<%= yield %>
-
+    </div>
+   </div>
+  </div>
+  <!-- end #page-->
+  <div id="footer">
+   <p>Copy: 2013, My Ruby Blog -Sample Project</p>
+  </div>
+  <!-- en #footer-->
+ </div>
+ <!-- end #wrapper-->
 </body>
 </html>
