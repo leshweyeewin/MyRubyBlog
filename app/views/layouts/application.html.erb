@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Demo</title>
+  <title>My Ruby Blog</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div>
+	<ul class="main-nav">
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "About", about_path %></li>
+		<li><%= link_to "Blog", posts_path %></li>
+		<li><%= link_to "Contact", contact_path %></li>
+		<li><%= link_to "Resources", resources_path %></li>
+	</ul>
+</div>
 
 <% flash.each do |key, value| %>
 <p><%= value %></p>
