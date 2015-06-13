@@ -130,36 +130,10 @@ a:hover{
 	 padding: 20px 0px 0px 0px
 }
 
-
-#search form {
-	 height: 41px;
-	 margin: 0;
-	 padding: 10px 0 0 0px;
+#search input [type = "text"] {
+	width: 180px
 }
 
-#search fieldset {
-	 margin: 0;
-	 padding: 0;
-	 border: none;
-}
-
-#search-text {
-	 width: 170px;
-	 height: 19px;
-	 padding: 4px 5px 1px 5px;
-	 border: none;
-	 background: #FFFFFF;
-	 text-transform: lowercase;
-	 font: normal 11px Arial, Helvetica, sans-serif;
-	 color: #5D781D;
-}
-
-#search-submit {
-	 width: 50px;
-	 height: 26px;
-	 background: #D93544;
-	 color: #FFFFFF;
-}
 
 /* Menu */
 #menu {
@@ -238,10 +212,11 @@ a:hover{
 }
 
 .post .title, .page .title {
-	 height: 41px;
+	 height: 40px;
 	 padding: 0px 0px 0px 0px;
-	 letter-spacing: -1px;
+	 letter-spacing: 0px;
 	 font-family: 'Abel', sans-serif;
+	 font-size: 2em;
 }
 
 .post .title a, .page .title a {
@@ -253,7 +228,7 @@ a:hover{
 .post .entry {
 	 padding: 20px 30px 20px 30px;
 	 padding-bottom: 20px;
-	 text-align: justify;
+	 text-align: left;
 }
 
 .post .byline {

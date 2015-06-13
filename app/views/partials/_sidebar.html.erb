@@ -2,12 +2,10 @@
       <ul>
        <li>
         <div id="search">
-         <form method="get" action="#">
-          <div>
-           <input type="text" name="s" id="sear-text" value="" />
-           <input type="submit" id="search-submit" value="GO" />
-          </div>
-         </form>
+          <%= search_form_for @q do |f| %>
+          <%= f.text_field :title_or_body_cont %>
+          <%= f.submit "Search" %>
+          <% end %>
         </div>
         <div style="clear: both;">&nsbp;</div>
        </li>

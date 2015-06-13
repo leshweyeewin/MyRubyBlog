@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :post_comments
+  resources :posts
+  resources :categories
+  
   get 'pages/about'
 
   get 'pages/contact'
@@ -7,7 +11,7 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :categories
+  
 
   get 'categories/index'
 
@@ -18,8 +22,7 @@ Rails.application.routes.draw do
   get 'categories/show'
 
   get 'home/index'
-    resources :posts
-    resources :categories
+    
     get '/about' , :to => 'pages#about'
     get '/contact' , :to => 'pages#contact'
     get '/resources' , :to => 'pages#resources'
@@ -59,8 +62,7 @@ Rails.application.routes.draw do
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end

@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
   helper_method :all_categories
   helper_method :all_posts
 
+  before_filter :site_search
+
+  def site_search
+    @q = Post.ransack(params[:q])
+    @q_posts = @q.result(distinct:true)
+  end 
+
   def all_categories
   	@categories = Category.all
   end

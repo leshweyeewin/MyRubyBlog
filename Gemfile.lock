@@ -207,6 +207,7 @@ DEPENDENCIES
   pg
   protected_attributes
   rails
+  ransack
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   turbolinks
