@@ -4,7 +4,10 @@
   <div class="entry"><%= post.body %></div>
   <div class="byline">
         <p class="meta"><%= post.created_at.strftime("%b %d %Y") %><!--Posted by <%= post.user.name %>--></p>
-        <p class="links"><%= link_to "Read More", post %> | <%= link_to "Comment", post %></p>
+        <p class="links"><%= link_to "Read More", post %>
+        <% if user_signed_in? %>
+         | <%= link_to "Comment", post %></p>
+        <% end %>
   </div>  
 </div>
 <br />
