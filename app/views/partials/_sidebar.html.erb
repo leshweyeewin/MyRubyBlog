@@ -1,22 +1,40 @@
 <div id="sidebar">
-      <ul>
-       <li>
+  <ul class="nav pull-right">
+    <% if user_signed_in? %>
+        <li>
+            Signed in as : <%= link_to current_user.name, edit_user_registration_path %>
+        </li>
+        <li><%= button_to "Logout", destroy_user_session_path, :method => :delete %></li>
+    <% else %>
+      <li>
+        <table>
+          <tr>
+            <th>
+              <td>
+                <%= button_to "Sign in", new_user_session_path, :method => :get %>
+              </td>
+              <td>
+                 <%= button_to "Sign up", new_user_registration_path, :method => :get %>
+              </td>
+            </th>
+          </tr>
+        </table>
+      </li>
+    <% end %>
+  </ul>
+  <ul>
+    <li>
         <div id="search">
           <%= search_form_for @q do |f| %>
           <%= f.text_field :title_or_body_cont %>
+          <br />
           <%= f.submit "Search" %>
           <% end %>
         </div>
         <div style="clear: both;">&nbsp;</div>
        </li>
        <li>
-        <h2>Get The Framework</h2>
-        <p>You can download Ruby and/or Ruby on Rails for free right now
-         <br>
-         <a style="color:#D93544" href="http://rubyonrails.org/download"></a></p>
-       </li>
-       <li>
-        <h2>Categories</h2>
+        <h2>Tags</h2>
         <ul>
           <% all_categories.each do |cat| %>
             <li><%= link_to cat.name, category_path(:id => cat.id) %></li>
@@ -24,7 +42,7 @@
         </ul>
        </li>
        <li>
-        <h2>Blogroll</h2>
+        <h2>Posts</h2>
         <ul>
          <% all_posts.each do |post| %>
             <li><%= link_to post.title, post_path(:id => post.id) %></li>

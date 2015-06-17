@@ -207,7 +207,6 @@ DEPENDENCIES
   ransack
   sass-rails
   sdoc
-  therubyracer
   turbolinks
   tzinfo-data
   uglifier

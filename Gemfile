@@ -12,6 +12,7 @@ gem 'uglifier'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
 
+# Added Gems
 gem 'protected_attributes'
 
 gem 'coffee-script-source'
@@ -21,10 +22,9 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
 gem 'ransack' #instead of gem 'meta_search'
-#gem 'sprockets_better_errors'
-#gem 'rails_12factor', group: :production
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer',  platforms: :ruby
+# gem 'therubyracer',  :platforms => :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

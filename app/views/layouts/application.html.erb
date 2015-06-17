@@ -3,11 +3,17 @@
    <div id="page-bgtop">
     <div id="page-bgbtm">
      <div id="content">
+      
      	<div class="flash-message">
      		<% flash.each do |key, value| %>
-			<p><%= value %></p>
-			<% end %>
-		</div>  	
+  			<p><%= value %></p>
+  			<% end %>
+		  </div>  
+
+      <!-- For Devise 
+      <p class="notice"><%= notice %></p>
+    	<p class="alert"><%= alert %></p> -->
+
 	    <%= yield %> <!-- main view -->
 	    <div style="clear: both;">&nbsp;</div>
      </div>
@@ -17,6 +23,7 @@
      <div style="clear: both;">&nbsp;</div>
 
     </div>
+    
    </div>
   </div>
   <!-- end #page-->

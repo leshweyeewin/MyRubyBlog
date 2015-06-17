@@ -1,8 +1,8 @@
 class PostComment < ActiveRecord::Base
-  attr_accessible :name, :email, :body, :post_id
+  attr_accessible :body, :post_id, :user_id
+  
   belongs_to :post
-
-  validates_presence_of :name
-  validates_length_of :name, :within => 2..20
+  belongs_to :user
+  
   validates_presence_of :body
 end

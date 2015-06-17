@@ -1,12 +1,11 @@
 <div class="post">
     <h1>About My Ruby Blog</h1>
-    <div id="content">
-      <p class="summary">Wondering why Ruby is so popular? Its fans call it a beautiful, artful
+    <p>Wondering why Ruby is so popular? Its fans call it a beautiful, artful
   language. And yet, they say it’s handy and practical. What gives?</p>
 
   <h3>The Ideals of Ruby’s Creator</h3>
 
-  <p>Ruby is a language of careful balance. Its creator, <a href="http://www.rubyist.net/~matz/">Yukihiro “Matz”
+  <p class="links">Ruby is a language of careful balance. Its creator, <a href="http://www.rubyist.net/~matz/">Yukihiro “Matz”
   Matsumoto</a>, blended parts of his favorite languages (Perl, Smalltalk,
   Eiffel, Ada, and Lisp) to form a new language that balanced functional
   programming with imperative programming.</p>
@@ -17,7 +16,7 @@
   <p>Building on this, he adds:</p>
 
   <blockquote>
-    <p>Ruby is simple in appearance, but is very complex inside, just like
+    <p class="links">Ruby is simple in appearance, but is very complex inside, just like
   our human body<sup><a href="#fn1">1</a></sup>.</p>
   </blockquote>
 
@@ -31,119 +30,20 @@
   <p style="float:right"><img src="http://gmane.org/plot-rate.php?group=gmane.comp.lang.ruby.general&amp;width=320&amp;height=160&amp;title=Ruby-Talk+Activity" alt="Graph courtesy of
   Gmane." title="Graph courtesy of Gmane." style="padding-left:8px;" /></p>
 
-  <p>Ruby-Talk, the primary <a href="/en/community/mailing-lists/">mailing list</a> for
+  <p class="links">Ruby-Talk, the primary <a href="/en/community/mailing-lists/">mailing list</a> for
   discussion of the Ruby language, climbed to an average of 200 messages
   per day in 2006. It has dropped in recent years as the size of the
   community pushed discussion from one central list into many smaller
   groups.</p>
 
-  <p>Ruby is ranked among the top 10 on most of the indices that measure
+  <p class="links">Ruby is ranked among the top 10 on most of the indices that measure
   the growth and popularity of programming languages worldwide
   (such as the <a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html">TIOBE index</a>). Much of the growth is attributed to the
   popularity of software written in Ruby, particularly the
   <a href="http://rubyonrails.org/">Ruby on Rails</a> web framework.</p>
 
-  <p>Ruby is also <a href="/en/about/license.txt">completely free</a>. Not only free of charge, but
+  <p class="links">Ruby is also <a href="/en/about/license.txt">completely free</a>. Not only free of charge, but
   also free to use, copy, modify, and distribute.</p>
-
-  <h3>Seeing Everything as an Object</h3>
-
-  <p>Initially, Matz looked at other languages to find an ideal syntax.
-  Recalling his search, he said, “I wanted a scripting language that was
-  more powerful than Perl, and more object-oriented than
-  Python<sup><a href="#fn2">2</a></sup>.”</p>
-
-  <p>In Ruby, everything is an object. Every bit of information and code can
-  be given their own properties and actions. Object-oriented programming
-  calls properties by the name <em>instance variables</em> and actions are known
-  as <em>methods</em>. Ruby’s pure object-oriented approach is most commonly
-  demonstrated by a bit of code which applies an action to a number.</p>
-
-  <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">5</span><span class="o">.</span><span class="n">times</span> <span class="p">{</span> <span class="nb">print</span> <span class="s2">&quot;We *love* Ruby -- it&#39;s outrageous!&quot;</span> <span class="p">}</span></code></pre></div>
-
-  <p>In many languages, numbers and other primitive types are not objects.
-  Ruby follows the influence of the Smalltalk language by giving methods
-  and instance variables to all of its types. This eases one’s use of
-  Ruby, since rules applying to objects apply to all of Ruby.</p>
-
-  <h3>Ruby’s Flexibility</h3>
-
-  <p>Ruby is seen as a flexible language, since it allows its users to freely
-  alter its parts. Essential parts of Ruby can be removed or redefined, at
-  will. Existing parts can be added upon. Ruby tries not to restrict the
-  coder.</p>
-
-  <p>For example, addition is performed with the plus (<code>+</code>) operator. But, if
-  you’d rather use the readable word <code>plus</code>, you could add such a method
-  to Ruby’s builtin <code>Numeric</code> class.</p>
-
-  <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Numeric</span>
-    <span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-      <span class="nb">self</span><span class="o">.</span><span class="n">+</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span><span class="o">.</span><span class="n">plus</span> <span class="mi">6</span>
-  <span class="c1"># y is now equal to 11</span></code></pre></div>
-
-  <p>Ruby’s operators are syntactic sugar for methods. You can redefine them
-  as well.</p>
-
-  <h3>Blocks: a Truly Expressive Feature</h3>
-
-  <p>Ruby’s block are also seen as a source of great flexibility. A
-  programmer can attach a closure to any method, describing how that
-  method should act. The closure is called a <em>block</em> and has become one of
-  the most popular features for newcomers to Ruby from other imperative
-  languages like PHP or Visual Basic.</p>
-
-  <p>Blocks are inspired by functional languages. Matz said, “in Ruby
-  closures, I wanted to respect the Lisp culture<sup><a href="#fn3">3</a></sup>.”</p>
-
-  <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">search_engines</span> <span class="o">=</span>
-    <span class="sx">%w[Google Yahoo MSN]</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">engine</span><span class="o">|</span>
-      <span class="s2">&quot;http://www.&quot;</span> <span class="o">+</span> <span class="n">engine</span><span class="o">.</span><span class="n">downcase</span> <span class="o">+</span> <span class="s2">&quot;.com&quot;</span>
-    <span class="k">end</span></code></pre></div>
-
-  <p>In the above code, the block is described inside the <code>do ... end</code>
-  construct. The <code>map</code> method applies the block to the provided list of
-  words. Many other methods in Ruby leave a hole open for a coder to write
-  their own block to fill in the details of what that method should do.</p>
-
-  <h3>Ruby and the Mixin</h3>
-
-  <p>Unlike many object-oriented languages, Ruby features single inheritance
-  only, <strong>on purpose</strong>. But Ruby knows the concept of modules (called
-  Categories in Objective-C). Modules are collections of methods.</p>
-
-  <p>Classes can mixin a module and receive all its methods for free. For
-  example, any class which implements the <code>each</code> method can mixin the
-  <code>Enumerable</code> module, which adds a pile of methods that use <code>each</code> for
-  looping.</p>
-
-  <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">MyArray</span>
-    <span class="kp">include</span> <span class="no">Enumerable</span>
-  <span class="k">end</span></code></pre></div>
-
-  <p>Generally, Rubyists see this as a much clearer way than multiple
-  inheritance, which is complex and can be too restrictive.</p>
-
-  <h3>Ruby’s Visual Appearance</h3>
-
-  <p>While Ruby often uses very limited punctuation and usually prefers
-  English keywords, some punctuation is used to decorate Ruby. Ruby needs
-  no variable declarations. It uses simple naming conventions to denote
-  the scope of variables.</p>
-
-  <ul>
-    <li><code>var</code> could be a local variable.</li>
-    <li><code>@var</code> is an instance variable.</li>
-    <li><code>$var</code> is a global variable.</li>
-  </ul>
-
-  <p>These sigils enhance readability by allowing the programmer to easily
-  identify the roles of each variable. It also becomes unnecessary to use
-  a tiresome <code>self.</code> prepended to every instance member.</p>
 
   <h3>Beyond the Basics</h3>
 
@@ -180,51 +80,14 @@
     </li>
   </ul>
 
-  <h3>Other Implementations of Ruby</h3>
-
-  <p>Ruby, as a language, has a few different implementations.
-  This page has been discussing the reference implementation, in the
-  community often referred to as <strong>MRI</strong> (“Matz’s Ruby Interpreter”)
-  or <strong>CRuby</strong> (since it is written in C), but there are also others.
-  They are often useful in certain situations, provide extra
-  integration to other languages or environments, or have special features
-  that MRI doesn’t.</p>
-
-  <p>Here’s a list:</p>
-
-  <ul>
-    <li><a href="http://jruby.org">JRuby</a> is Ruby atop the JVM (Java Virtual Machine), utilizing the
-  JVM’s optimizing JIT compilers, garbage collectors, concurrent
-  threads, tool ecosystem, and vast collection of libraries.</li>
-    <li><a href="http://rubini.us">Rubinius</a> is ‘Ruby written in Ruby’. Built on top of LLVM,
-  Rubinius sports a nifty virtual machine that other languages are being
-  built on top of, too.</li>
-    <li><a href="http://www.macruby.org">MacRuby</a> is a Ruby that’s tightly integrated with Apple’s Cocoa
-  libraries for Mac OS X, allowing you to write desktop applications
-  with ease.</li>
-    <li><a href="http://www.mruby.org/">mruby</a> is a lightweight implementation of the Ruby language
-  that can be linked and embedded within an application.
-  Its development is lead by Ruby’s creator Yukihiro “Matz” Matsumoto.</li>
-    <li><a href="http://www.ironruby.net">IronRuby</a> is an implementation “tightly integrated with the .NET
-  Framework”.</li>
-    <li><a href="http://ruby.gemstone.com">MagLev</a> is “a fast, stable, Ruby implementation with integrated
-  object persistence and distributed shared cache”.</li>
-    <li><a href="https://github.com/parrot/cardinal">Cardinal</a> is a “Ruby compiler for <a href="http://parrot.org">Parrot</a> Virtual Machine”
-  (Perl 6).</li>
-  </ul>
-
-  <p>Some of those implementations, including MRI, follow the guidelines of
-  <a href="http://rubyspec.org">RubySpec</a>, a “complete executable specification for the Ruby
-  programming language”.</p>
-
   <h3>References</h3>
 
-  <p id="fn1"><sup>1</sup> Matz, speaking on the Ruby-Talk mailing list, <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/2773">May 12th,
+  <p  class="links" id="fn1"><sup>1</sup> Matz, speaking on the Ruby-Talk mailing list, <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/2773">May 12th,
   2000</a>.</p>
 
-  <p id="fn2"><sup>2</sup> Matz, in <a href="http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html">An Interview with the Creator of Ruby</a>, Nov.
+  <p  class="links" id="fn2"><sup>2</sup> Matz, in <a href="http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html">An Interview with the Creator of Ruby</a>, Nov.
   29th, 2001.</p>
 
-  <p id="fn3"><sup>3</sup> Matz, in <a href="http://www.artima.com/intv/closures2.html">Blocks and Closures in Ruby</a>, December 22nd,
+  <p  class="links" id="fn3"><sup>3</sup> Matz, in <a href="http://www.artima.com/intv/closures2.html">Blocks and Closures in Ruby</a>, December 22nd,
   2003.</p>
 </div>

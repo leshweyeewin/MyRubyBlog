@@ -1,32 +1,33 @@
 <div class="post">
 <h1><%= @post.title %></h1>
-<small><%= @post.created_at.strftime("%b %d %Y") %></small>
-<p>Created By : <%= @post.admin_user.name %></p>
-<p><%= @post.body %></p>
-<p>Category : <%= link_to @post.category.name, category_path(:id => @post.category.id) %></p>
-<p><%= link_to "Back", posts_path %></p>
-<!-- <%= link_to "Edit Post", edit_post_path %> | <%= link_to "Delete", @post, :confirm => "Are you sure you want to delete?", :method => :delete %> -->
-
 <br />
-<h3>Add a Comment</h3>
-<%= form_for @post_comment do |f| %>
-	<%= f.hidden_field :post_id %>
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :email %><br />
-		<%= f.text_field :email %>
-	</p>
-	<p>
-		<%= f.label :body %><br />
-		<%= f.text_field :body %>
-	</p>
-	<br />
-	<p>
-		<%= f.submit "Post Comment" %>
-	</p>
+<small><%= @post.created_at.strftime("%b %d %Y") %></small>
+<!--<p style="color: grey;">Posted By : <%= @post.user.name %></p>-->
+<p><%= @post.body %></p>
+<p style="color: grey;">Tag : <%= link_to @post.category.name, category_path(:id => @post.category.id) %></p>
+<p><%= link_to "Back", posts_path %>
+<% if @post.user == current_user %> 
+| <%= link_to "Edit Post", edit_post_path %> | <%= link_to "Delete", @post, :confirm => "Are you sure you want to delete?", :method => :delete %> 
+<% end %>
+</p>
+<p>
+  <%= @post.post_comments.count %> comment(s)
+</p>
+<% if user_signed_in? %>
+  <h3>Add a Comment</h3>
+  <br />
+  <%= form_for @post_comment do |f| %>
+    <%= f.hidden_field :post_id %>
+    <%= f.hidden_field :user_id %>
+    <p>
+      <%= f.text_field :body %>
+    </p>
+    <br />
+    <p>
+      <%= f.submit "Post Comment" %>
+    </p>
+    <br />
+  <% end %>
 <% end %>
 <%= render :partial => 'partials/comment', :collection => @post.post_comments %>
 </div>

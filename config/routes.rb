@@ -1,31 +1,28 @@
 Rails.application.routes.draw do
-  resources :post_comments
-  resources :posts
-  resources :categories
-  
-  get 'pages/about'
 
-  get 'pages/contact'
-
-  get 'pages/resources'
+  devise_for :users 
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
+  resources :post_comments
+  resources :posts
+  resources :categories
 
+  get 'pages/about'
+  get 'pages/contact'
+  get 'pages/resources'
+  
   get 'categories/index'
-
   get 'categories/new'
-
   get 'categories/edit'
-
   get 'categories/show'
-
+  
   get 'home/index'
     
-    get '/about' , :to => 'pages#about'
-    get '/contact' , :to => 'pages#contact'
-    get '/resources' , :to => 'pages#resources'
+  get '/about' , :to => 'pages#about'
+  get '/contact' , :to => 'pages#contact'
+  get '/resources' , :to => 'pages#resources'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

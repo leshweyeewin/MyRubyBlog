@@ -4,15 +4,16 @@
   <title>My Ruby Blog</title>
    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel" type="text/css" />
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'defaults' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
+<body>
 <div id="wrapper">
   <div id="header-wrapper">
    <div id="header">
     <div id="logo">
-     <h1><a href="#">My Ruby Blog</a></h1>
+     <h1><a>My Ruby Blog</a></h1>
      <p>Learing Ruby on Rails</p>
     </div>
     <div id="menu">

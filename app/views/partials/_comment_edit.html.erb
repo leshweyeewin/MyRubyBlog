@@ -1,0 +1,12 @@
+<%= form_for @post_comment do |f| %>
+	<%= f.hidden_field :post_id %>
+    <%= f.hidden_field :user_id %>
+    <p>
+      <%= f.text_field :body %>
+    </p>
+    <br />
+    <p>
+      <%= f.submit "Update Comment" %>
+    </p>
+    <br />
+<% end %>
