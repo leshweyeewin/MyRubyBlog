@@ -22,6 +22,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
 gem 'ransack' #instead of gem 'meta_search'
+gem 'acts-as-taggable-on'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  :platforms => :ruby

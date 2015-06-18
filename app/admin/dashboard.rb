@@ -18,6 +18,7 @@ ActiveAdmin.register_page "Dashboard" do
             end
             column "Author", :user
             column :category, :sortable => :category
+            column "Tags", :tag_list 
             column :created_at
         end
         strong (link_to "Show All Posts", :admin_posts)
@@ -33,6 +34,8 @@ ActiveAdmin.register_page "Dashboard" do
         end
         strong (link_to "Show All Categories", :admin_categories)
     end
+
+
 
   end # content
 end

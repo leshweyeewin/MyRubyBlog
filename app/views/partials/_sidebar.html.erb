@@ -34,7 +34,7 @@
         <div style="clear: both;">&nbsp;</div>
        </li>
        <li>
-        <h2>Tags</h2>
+        <h2>Categories</h2>
         <ul>
           <% all_categories.each do |cat| %>
             <li><%= link_to cat.name, category_path(:id => cat.id) %></li>
@@ -42,9 +42,17 @@
         </ul>
        </li>
        <li>
-        <h2>Posts</h2>
+        <h2>Popular Tags</h2>
         <ul>
-         <% all_posts.each do |post| %>
+          <% popular_tags.each do |tag| %>
+            <li><%= link_to tag.name, tagged_url(:tag => tag.name) %></li>
+          <% end %>
+        </ul>
+       </li>
+       <li>
+        <h2>Recent Posts</h2>
+        <ul>
+         <% recent_posts.each do |post| %>
             <li><%= link_to post.title, post_path(:id => post.id) %></li>
           <% end %>
         </ul>

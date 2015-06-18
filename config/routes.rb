@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :post_comments
   resources :posts
   resources :categories
+  resources :tags
+  resources :taggings
 
   get 'pages/about'
   get 'pages/contact'
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
   get '/about' , :to => 'pages#about'
   get '/contact' , :to => 'pages#contact'
   get '/resources' , :to => 'pages#resources'
+  get 'tagged', :to => 'posts#tagged', :as => :tagged
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!, except: [:index, :show, :tagged]
 	
 	def index
 		@q = Post.ransack(params[:q])
@@ -46,5 +46,13 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@post.destroy
 		redirect_to posts_path, :notice => "Your post has been deleted."
+	end
+
+	def tagged
+		if params[:tag].present?
+			@posts = Post.tagged_with(params[:tag])
+		else
+			@posts = Post.all
+		end
 	end
 end

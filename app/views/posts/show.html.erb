@@ -2,6 +2,23 @@
 <h1><%= @post.title %></h1>
 <br />
 <small><%= @post.created_at.strftime("%b %d %Y") %></small>
+
+<div class = "tag">
+  <% if @post.tags.any? %>
+    <% @post.tags.each do |tag| %>
+      <% if Category.find_by_name(tag.name) %>
+        <%= link_to "#"+tag.name, tagged_url(:tag => tag.name) %>
+      <% else  %>
+        <% if User.find_by_name(tag.name) %>
+          <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
+        <% else %>
+          <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
 <!--<p style="color: grey;">Posted By : <%= @post.user.name %></p>-->
 <p><%= @post.body %></p>
 <p style="color: grey;">Tag : <%= link_to @post.category.name, category_path(:id => @post.category.id) %></p>
