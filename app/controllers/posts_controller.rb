@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 	
 	def index
 		@q = Post.ransack(params[:q])
-		@posts = @q.result(distinct:true).order("created_at DESC")
+		@posts = @q.result(distinct:true).includes(:tags).order("created_at DESC")
 	end
 
 	def show

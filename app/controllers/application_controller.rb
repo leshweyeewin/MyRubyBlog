@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def site_search
     @q = Post.ransack(params[:q])
-    @q_posts = @q.result(distinct:true).order("created_at DESC")
+    @q_posts = @q.result(distinct:true).includes(:tags).order("created_at DESC")
   end 
 
   def all_categories
