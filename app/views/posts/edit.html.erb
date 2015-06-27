@@ -1,3 +1,4 @@
+<p><%= @post.errors.full_messages.first if @post.errors.any? %></p>
 <h1>Edit Post</h1>
 <%= form_for @post do |f| %>
 	<p>
@@ -5,7 +6,7 @@
 		<%= f.text_field :title %><br />
 	</p>
 	<p>
-		<%= f.label :tag_list, "Tags (separated by commas)" %><br />
+		<%= f.label :tags, "Tags (separated by commas)" %><br />
 		<%= f.text_field :tag_list %><br />
 	</p>
 	<p>

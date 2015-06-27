@@ -1,3 +1,4 @@
+<p><%= @post.errors.full_messages.first if @post.errors.any? %></p>
 <h1>Add New Post</h1>
 <%= form_for @post do |f| %>
 	<p>
