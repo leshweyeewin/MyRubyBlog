@@ -20,6 +20,10 @@ gem 'execjs'
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+# Using OmniAuth for social integration
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 gem 'ransack' #instead of gem 'meta_search'
 gem 'acts-as-taggable-on'

@@ -30,7 +30,10 @@
 <p>
   <%= @post.post_comments.count %> comment(s)
 </p>
+<%= render :partial => 'partials/comment', :collection => @post.post_comments %>
+
 <% if user_signed_in? %>
+
   <h3>Add a Comment</h3>
   <br />
   <%= form_for @post_comment do |f| %>
@@ -45,6 +48,6 @@
     </p>
     <br />
   <% end %>
+  
 <% end %>
-<%= render :partial => 'partials/comment', :collection => @post.post_comments %>
 </div>
