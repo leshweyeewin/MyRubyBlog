@@ -27,6 +27,7 @@ gem 'omniauth-facebook'
 
 gem 'ransack' #instead of gem 'meta_search'
 gem 'acts-as-taggable-on'
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  :platforms => :ruby
